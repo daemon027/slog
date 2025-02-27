@@ -1,14 +1,12 @@
 A small tool to search log files.
 
-Suppose we have a K8S cluster and we collect all the pod log to a log server.
-
-The log files are in the direcotry ```/logs/$CLUSTER_NAME/$NAMESPACE/$SVC_NAME/$DAY_STR```.
+Suppose we have a K8S cluster and we collect all the pod log to a log server, the log files are in the directory ```/logs/$CLUSTER_NAME/$NAMESPACE/$SVC_NAME/$DAY_STR```.
 
 The dir tree as follows:
 ```
-├── log-files
+├── logs
 │   ├── k8s-test
-│   │   ├── hello
+│   │   ├── ns00
 │   │   │   └── svc01
 │   │   │       ├── 2024-12-31
 │   │   │       │   ├── aa.log
@@ -18,5 +16,5 @@ The dir tree as follows:
 
 Run it like this:
 ```bash
-slog.sh -t "1 hour ago" -k "hi"
+slog.sh -c k8s-test -n ns00 -s svc01 -t "1 hour ago" -k "hi"
 ```

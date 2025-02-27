@@ -8,8 +8,8 @@ if [ $# -lt 1 ];then
 fi
 
 CLUSTER_NAME=k8s-test
-NAMESPACE=test
-SVC_NAME=hello
+NAMESPACE=ns00
+SVC_NAME=svc01
 TIME_RANGE="5 mins ago"
 KEY_WORDS=""
 BEFORE=3
